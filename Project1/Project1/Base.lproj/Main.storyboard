@@ -693,6 +693,9 @@
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
                     </window>
+                    <connections>
+                        <segue destination="5vn-o6-j8o" kind="relationship" relationship="window.shadowedContentViewController" id="hci-BB-eqV"/>
+                    </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -707,7 +710,7 @@
                         <splitViewItem id="a9A-Kd-bfh"/>
                     </splitViewItems>
                     <splitView key="splitView" dividerStyle="thin" vertical="YES" id="sH2-z9-VG7">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="77" width="450" height="223"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <outlet property="delegate" destination="5vn-o6-j8o" id="q8e-Np-qde"/>
@@ -721,7 +724,7 @@
                 </splitViewController>
                 <customObject id="pLP-aD-6z5" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="72" y="664"/>
+            <point key="canvasLocation" x="75" y="692"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zdw-cA-Klh">
