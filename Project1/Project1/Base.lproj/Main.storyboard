@@ -801,6 +801,9 @@
                             </scrollView>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="h8A-WG-Okr" id="ckK-aM-YnI"/>
+                    </connections>
                 </viewController>
                 <customObject id="WDT-8C-Yab" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -821,6 +824,9 @@
                             </imageView>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="vOx-T1-eoW" id="KnV-Mj-GWN"/>
+                    </connections>
                 </viewController>
                 <customObject id="cH8-jv-BPB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
