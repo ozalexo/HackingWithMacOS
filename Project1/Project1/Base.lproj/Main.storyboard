@@ -134,13 +134,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="250" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView autohidesScrollers="YES" horizontalLineScroll="34" horizontalPageScroll="10" verticalLineScroll="34" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUS-Ey-Age">
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="46" horizontalPageScroll="10" verticalLineScroll="46" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUS-Ey-Age">
                                 <rect key="frame" x="0.0" y="0.0" width="250" height="300"/>
                                 <clipView key="contentView" drawsBackground="NO" id="Xlj-YZ-qKo">
                                     <rect key="frame" x="1" y="1" width="248" height="298"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="32" rowSizeStyle="large" viewBased="YES" id="h8A-WG-Okr">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="44" viewBased="YES" id="h8A-WG-Okr">
                                             <rect key="frame" x="0.0" y="0.0" width="248" height="298"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -164,9 +164,8 @@
                                                             <rect key="frame" x="1" y="1" width="245" height="44"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YUn-9H-cTT">
-                                                                    <rect key="frame" x="1" y="3" width="243" height="38"/>
-                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YUn-9H-cTT">
+                                                                    <rect key="frame" x="1" y="12" width="243" height="21"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="rti-V0-lY2">
                                                                         <font key="font" metaFont="system" size="18"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -174,6 +173,9 @@
                                                                     </textFieldCell>
                                                                 </textField>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="YUn-9H-cTT" firstAttribute="centerY" secondItem="ZWE-Ge-ifx" secondAttribute="centerY" id="ohE-Sp-BVT"/>
+                                                            </constraints>
                                                             <connections>
                                                                 <outlet property="textField" destination="YUn-9H-cTT" id="T1U-eQ-Kf5"/>
                                                             </connections>
