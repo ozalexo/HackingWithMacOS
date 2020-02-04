@@ -706,7 +706,7 @@
             <objects>
                 <splitViewController id="5vn-o6-j8o" sceneMemberID="viewController">
                     <splitViewItems>
-                        <splitViewItem id="eZL-NV-KZr"/>
+                        <splitViewItem holdingPriority="260" id="eZL-NV-KZr"/>
                         <splitViewItem id="a9A-Kd-bfh"/>
                     </splitViewItems>
                     <splitView key="splitView" dividerStyle="thin" vertical="YES" id="sH2-z9-VG7">
@@ -730,18 +730,17 @@
         <scene sceneID="zdw-cA-Klh">
             <objects>
                 <viewController id="F0G-jX-eJX" customClass="SourceViewController" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="xEL-b3-Xsb">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                    <view key="view" misplaced="YES" id="xEL-b3-Xsb">
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUS-Ey-Age">
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUS-Ey-Age">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="Xlj-YZ-qKo">
+                                <clipView key="contentView" drawsBackground="NO" id="Xlj-YZ-qKo">
                                     <rect key="frame" x="1" y="1" width="448" height="298"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="h8A-WG-Okr">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="h8A-WG-Okr">
                                             <rect key="frame" x="0.0" y="0.0" width="448" height="298"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -765,9 +764,11 @@
                                                             <rect key="frame" x="1" y="1" width="445" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YUn-9H-cTT">
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="YUn-9H-cTT">
                                                                     <rect key="frame" x="0.0" y="0.0" width="445" height="17"/>
-                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="17" id="091-0b-5dM"/>
+                                                                    </constraints>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="rti-V0-lY2">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -775,6 +776,11 @@
                                                                     </textFieldCell>
                                                                 </textField>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="YUn-9H-cTT" firstAttribute="leading" secondItem="ZWE-Ge-ifx" secondAttribute="leading" constant="2" id="MNy-tT-9Te"/>
+                                                                <constraint firstItem="YUn-9H-cTT" firstAttribute="centerY" secondItem="ZWE-Ge-ifx" secondAttribute="centerY" id="ZAZ-RT-5V2"/>
+                                                                <constraint firstItem="YUn-9H-cTT" firstAttribute="centerX" secondItem="ZWE-Ge-ifx" secondAttribute="centerX" id="uB5-IP-FQB"/>
+                                                            </constraints>
                                                             <connections>
                                                                 <outlet property="textField" destination="YUn-9H-cTT" id="T1U-eQ-Kf5"/>
                                                             </connections>
@@ -800,6 +806,12 @@
                                 </scroller>
                             </scrollView>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="KUS-Ey-Age" secondAttribute="bottom" id="4xN-KG-Tzh"/>
+                            <constraint firstItem="KUS-Ey-Age" firstAttribute="leading" secondItem="xEL-b3-Xsb" secondAttribute="leading" id="Tqe-NX-dzD"/>
+                            <constraint firstItem="KUS-Ey-Age" firstAttribute="top" secondItem="xEL-b3-Xsb" secondAttribute="top" id="VoE-jl-GqY"/>
+                            <constraint firstAttribute="trailing" secondItem="KUS-Ey-Age" secondAttribute="trailing" id="oxl-9G-0pR"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="h8A-WG-Okr" id="ckK-aM-YnI"/>
@@ -817,12 +829,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vOx-T1-eoW">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vOx-T1-eoW">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="51P-d1-5FX"/>
                             </imageView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="vOx-T1-eoW" firstAttribute="leading" secondItem="Hnr-dX-8mC" secondAttribute="leading" id="Pai-OR-L8l"/>
+                            <constraint firstItem="vOx-T1-eoW" firstAttribute="top" secondItem="Hnr-dX-8mC" secondAttribute="top" id="dwY-UX-piH"/>
+                            <constraint firstAttribute="trailing" secondItem="vOx-T1-eoW" secondAttribute="trailing" id="kGZ-ii-pOl"/>
+                            <constraint firstAttribute="bottom" secondItem="vOx-T1-eoW" secondAttribute="bottom" id="sD6-4z-3Ai"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="vOx-T1-eoW" id="KnV-Mj-GWN"/>
