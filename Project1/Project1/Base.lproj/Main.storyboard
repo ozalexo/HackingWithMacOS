@@ -737,7 +737,7 @@
                 </viewController>
                 <customObject id="WDT-8C-Yab" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="742" y="478"/>
+            <point key="canvasLocation" x="-464" y="691"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2Ih-L6-O1k">
@@ -750,7 +750,7 @@
                 </viewController>
                 <customObject id="cH8-jv-BPB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="742" y="850"/>
+            <point key="canvasLocation" x="629" y="691"/>
         </scene>
     </scenes>
 </document>
