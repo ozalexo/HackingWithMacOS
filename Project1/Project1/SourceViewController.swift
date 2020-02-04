@@ -8,13 +8,39 @@
 
 import Cocoa
 
-class SourceViewController: NSViewController {
+class SourceViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
+
+    var pictures = [String]()
 
     @IBOutlet var tableView: NSTableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+
+        // get a list of *.nssl files
+        let fileManager = FileManager.default
+        let path = Bundle.main.resourcePath!
+        let items = try! fileManager.contentsOfDirectory(atPath: path)
+
+        // loop over each file in bundle
+        for item in items {
+            if item.hasPrefix("nssl") {
+                pictures.append(item)
+            }
+            pictures.sort()
+        }
+    }
+
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return pictures.count
+    }
+
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        guard let vw = tableView.makeView(withIdentifier:
+            tableColumn!.identifier, owner: self) as? NSTableCellView else
+        { return nil }
+        vw.textField?.stringValue = pictures[row]
+        return vw
     }
     
 }
