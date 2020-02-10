@@ -41,8 +41,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
 
         if resultString.contains("4b") {
             let alert = NSAlert()
-            alert.messageText = "You win"
-            alert.informativeText = "Congrats! Click OK to play again."
+            alert.messageText = "You win."
+            alert.informativeText = "Your result: \(resultString). Click OK to play again."
 
             // Show modal alert and stop until the player press 'OK'
             alert.runModal()
