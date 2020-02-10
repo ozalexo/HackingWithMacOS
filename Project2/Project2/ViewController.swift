@@ -11,15 +11,14 @@ import Cocoa
 class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
 
     @IBOutlet var tableView: NSTableView!
-    @IBOutlet var guess: NSTextField!
 
+    @IBOutlet var guess: NSTextField!
     var answer = ""
     var guesses = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        startNewGame()
     }
 
     @IBAction func submitGuess(_ sender: NSButton) {
@@ -39,6 +38,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         return "Result"
     }
 
+    // Put values to an appropriate columns of table
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         guard let vw = tableView.makeView(withIdentifier: tableColumn!.identifier, owner: self) as? NSTableCellView else { return nil }
 
@@ -53,9 +53,23 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         return vw
     }
 
+    // Disable selectable table's rows
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
         return false
     }
 
+    func startNewGame() {
+        guess.stringValue = ""
+        guesses.removeAll()
+        answer = ""
+
+        var numbers = Array(0...9).shuffled()
+
+        for _ in 0..<4 {
+            answer.append(String(numbers.removeLast()))
+        }
+
+        tableView.reloadData()
+    }
 }
 
