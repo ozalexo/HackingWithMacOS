@@ -736,7 +736,7 @@
                                             <tableColumns>
                                                 <tableColumn width="160" minWidth="40" maxWidth="1000" id="0Mo-uM-Mjw">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Guess">
-                                                        <font key="font" metaFont="toolTip"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -776,7 +776,7 @@
                                                 </tableColumn>
                                                 <tableColumn width="82" minWidth="40" maxWidth="1000" id="ITe-4U-qqS">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Result">
-                                                        <font key="font" metaFont="toolTip"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -815,6 +815,10 @@
                                                     </prototypeCellViews>
                                                 </tableColumn>
                                             </tableColumns>
+                                            <connections>
+                                                <outlet property="dataSource" destination="XfG-lQ-9wD" id="XWp-mZ-0J9"/>
+                                                <outlet property="delegate" destination="XfG-lQ-9wD" id="yYG-Dj-wgu"/>
+                                            </connections>
                                         </tableView>
                                     </subviews>
                                 </clipView>
@@ -843,6 +847,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="submitGuess:" target="XfG-lQ-9wD" id="AR4-ZL-aQR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -857,6 +864,10 @@
                             <constraint firstItem="3M8-Nw-EI7" firstAttribute="leading" secondItem="QHD-AQ-3Ym" secondAttribute="trailing" constant="10" id="wpW-Mf-py3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="guess" destination="QHD-AQ-3Ym" id="MSX-Un-3sD"/>
+                        <outlet property="tableView" destination="95o-Mg-gEe" id="Fsg-Z7-0Ib"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
