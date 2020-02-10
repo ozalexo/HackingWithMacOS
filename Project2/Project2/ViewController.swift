@@ -16,6 +16,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     var answer = ""
     var guesses = [String]()
     var movesCount = 0
+    var resultRating = "⭐️⭐️⭐️"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +40,24 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         // check results
         let resultString = result(for: guessString)
 
+        movesCount += 1
+
+        // Each ten moves we will remove 1 star of 3. 1 star is minimal result rating
+        if (movesCount % 10 == 0 && resultRating.count > 1) {
+            resultRating.removeLast()
+        }
+
+        guess.stringValue = ""
+
         if resultString.contains("4b") {
             let alert = NSAlert()
             alert.messageText = "You win."
-            alert.informativeText = "Your result: \(resultString). Click OK to play again."
+            alert.informativeText = """
+            Your result: \(resultString).
+            Your rating: \(resultRating) (moves count: \(movesCount)).
+
+            Click OK to play again.
+            """
 
             // Show modal alert and stop until the player press 'OK'
             alert.runModal()
@@ -103,6 +118,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         guess.stringValue = ""
         guesses.removeAll()
         answer = ""
+        movesCount = 0
+        resultRating = "⭐️⭐️⭐️"
 
         var numbers = Array(0...9).shuffled()
 
