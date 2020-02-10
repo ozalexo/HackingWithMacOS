@@ -22,6 +22,33 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     }
 
     @IBAction func submitGuess(_ sender: NSButton) {
+        // check uniqueness
+        let guessString = guess.stringValue
+        guard Set(guessString).count == 4 else { return }
+        guard guessString.count == 4 else { return }
+
+        // ensure that there are no non-digit characters
+        let badCharacters = CharacterSet(charactersIn: "0123456789").inverted
+        print(badCharacters)
+        guard guessString.rangeOfCharacter(from: badCharacters) == nil else { return }
+
+        // add the guess to the array and table view
+        guesses.insert(guessString, at: 0)
+        tableView.insertRows(at: IndexSet(integer: 0), withAnimation: .slideDown)
+
+        // check results
+        let resultString = result(for: guessString)
+
+        if resultString.contains("4b") {
+            let alert = NSAlert()
+            alert.messageText = "You win"
+            alert.informativeText = "Congrats! Click OK to play again."
+
+            // Show modal alert and stop until the player press 'OK'
+            alert.runModal()
+
+            startNewGame()
+        }
     }
 
     override var representedObject: Any? {
