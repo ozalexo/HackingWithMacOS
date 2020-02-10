@@ -15,6 +15,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     @IBOutlet var guess: NSTextField!
     var answer = ""
     var guesses = [String]()
+    var movesCount = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
 
         // ensure that there are no non-digit characters
         let badCharacters = CharacterSet(charactersIn: "0123456789").inverted
-        print(badCharacters)
         guard guessString.rangeOfCharacter(from: badCharacters) == nil else { return }
 
         // add the guess to the array and table view
